@@ -1,5 +1,5 @@
 //
-//  BasicViewController.swift
+//  BasicTableViewController.swift
 //  RxStudy
 //
 //  Created by Madeline on 3/28/24.
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 
-class BasicViewController: UIViewController, UITableViewDelegate {
+class BasicTableViewController: UIViewController, UITableViewDelegate {
     
     let tableView = UITableView()
     let wireframe = DefaultWireframe()
