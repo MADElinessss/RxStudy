@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc1 = BasicTableViewController()
         let vc2 = BasicPickerViewController()
         let vc3 = NumberViewController()
+        let vc4 = ValidationViewController()
 
         vc1.tabBarItem = UITabBarItem(title: "TableView", image: UIImage(systemName: "list.clipboard"), selectedImage: UIImage(systemName: "list.clipboard"))
         vc1.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
@@ -41,13 +42,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         vc3.tabBarItem = UITabBarItem(title: "Number", image: UIImage(systemName: "number.circle"), selectedImage: UIImage(systemName: "number.circle"))
         vc3.tabBarItem.tag = 2
         
-        // tabBarController.viewControllers = [vc1, vc2, vc3, vc4].map { UINavigationController(rootViewController: $0) }
-        tabBarController.viewControllers = [vc1, vc2, vc3].map { UINavigationController(rootViewController: $0) }
+        vc4.tabBarItem = UITabBarItem(title: "Validation", image: UIImage(systemName: "apple.logo"), selectedImage: UIImage(systemName: "apple.logo"))
+        vc3.tabBarItem.tag = 3
+        
+        tabBarController.viewControllers = [vc1, vc2, vc3, vc4].map { UINavigationController(rootViewController: $0) }
         
         window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
-//        BasicViewController
-        
+        window?.makeKeyAndVisible() 
         
     }
 
