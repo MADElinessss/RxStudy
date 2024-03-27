@@ -16,7 +16,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: scene)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.tabBar.backgroundColor = .white
+        tabBarController.tabBar.tintColor = .blue
+        tabBarController.tabBar.unselectedItemTintColor = .gray
+        
+        let vc1 = BasicViewController()
+        // let vc2 = DiaryViewController()
+//        let vc3 = ChartViewController()
+
+        vc1.tabBarItem = UITabBarItem(title: "TableView", image: UIImage(systemName: "list"), selectedImage: UIImage(systemName: "list"))
+        vc1.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        vc1.tabBarItem.tag = 0
+        
+//        vc2.tabBarItem = UITabBarItem(title: "??", image: UIImage(systemName: "star"), selectedImage: UIImage(systemName: "star"))
+//        vc2.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+//        vc2.tabBarItem.tag = 1
+        
+//        vc3.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "stats"), selectedImage: UIImage(named: "stats"))
+//        vc3.tabBarItem.tag = 2
+        
+        // tabBarController.viewControllers = [vc1, vc2, vc3, vc4].map { UINavigationController(rootViewController: $0) }
+        tabBarController.viewControllers = [vc1].map { UINavigationController(rootViewController: $0) }
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+//        BasicViewController
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
